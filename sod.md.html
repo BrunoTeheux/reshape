@@ -1,0 +1,85 @@
+<meta charset="utf-8"> 
+**ReShape: a Collaborative Art Experience**
+                *Hugo Parlier and Bruno Teheux* 
+
+# Introduction
+
+The genesis of this project emerged from observing the remarkable equilibrium achieved by abstract artists in their compositions using minimal geometric elements (including Aurélie Némours, Theo van Doesburg, Vilmos Huszár, Vassily Kandinsky, and Piet Mondrian). Their works demonstrate how fundamental graphic components—squares, circles, and points—combined with restricted color palettes can create compelling artistic expressions.
+
+Intrigued by the universal appeal of these works, we designed a crowdsourcing art initiative to explore this phenomenon systematically. Over a twelve-month period, visitors to our partner institutions participated in creating geometric compositions through an interactive tablet interface. The creative process was structured by offering participants a curated selection of elements: curves, geometric shapes, and pixel-based designs.
+
+The collected visitor contributions underwent various aggregation processes, forming the foundation for a unique interdisciplinary collaboration. Three composers transformed these visual data into distinct musical compositions through sonification techniques. Working closely with these composers, we developed corresponding visualizations for the final performance at the *Sound of Data Project*—a collaborative venture between the University of Luxembourg, the Luxembourg National Research Fund (FNR), the Luxembourg Institute of Science and Technology (LIST), and Rockhal, presented as part of Esch2022 European Capital of Culture.
+
+This report documents the project's conceptual framework, implementation process, collaborative dynamics, and outcomes, while also identifying potential areas for future investigation.
+
+# Data Collection Methodololy
+
+The data collection phase was conceived as an outreach activity, designed to engage the public with mathematical principles through artistic expression. To facilitate this engagement, we collaborated with a commissioned designer to create an aesthetically appealing iPad stand, enabling data collection across multiple locations.
+![Tablet Stand for Data Collection](img/stand.jpg width="300px")
+
+A bespoke application was commissioned, featuring a minimalist interface that encouraged intuitive interaction while maintaining robust backend capabilities for data storage and retrieval. The simplicity of the interface belied its sophisticated underlying structure, allowing for systematic data collection while ensuring an engaging user experience.
+
+Data collection sites were strategically selected to reach diverse audiences, including the University of Luxembourg, Centre Culturel Opderschmelz, Rotondes, Neimënster Abbey, various local high schools, and the Luxembourg Learning Centre. 
+
+The project's reach extended beyond midterm installations in local venues to significant cultural events, including the Science Meets Music event and Researchers Days. Most notably, we conducted a ten-day data collection and mediation session at the Luxembourg Pavillon of the World Expo Dubai 2020, significantly expanding the project's international scope.
+
+Throughout the data collection process, we prioritized mediated interactions, providing guidance and explanation to participants. This approach created natural opportunities for informal discussions between researchers and participants about the mathematical principles underlying the artistic creation process and the various possible aggregation techniques.
+
+By November 2022, the project had amassed a substantial dataset of approximately 20,000 participant-generated drawings, which formed the foundation for the subsequent sonification phase.
+
+**Pictures of Data Collection:**
+![](img/Sod01.jpg width="200px") ![](img/Dubai03.jpg width="200px") ![](img/Sod03.jpg width="200px") 
+![](img/Sod02.jpg width="200px") ![](img/Dubai01.jpg width="200px") ![](img/Dubai02.jpg width="200px") 
+
+![Curve coloring process](img/Coloring.webm)
+
+# Data set
+
+The data collection interface offered participants three distinct drawing modalities:
+
+ 1. *Curve-Based Compositions*. Participants created drawings by generating curves that traversed the iPad screen from left to right. The regions formed by these curves were automatically colored based on two parameters: the mathematical winding number of the curves and the participant's color selection from a predefined palette. The constraint of left-to-right traversal ensured consistency in the data structure while allowing for significant creative variation.
+ 2. *Shape Compositions.* This modality invited participants to construct abstract compositions using combinations of three basic geometric shapes: circles, triangles, and quadrilaterals. Participants could freely draw these shapes, and the regions formed by their intersections were colored according to [XXX]. This approach allowed for exploration of compositional balance through fundamental geometric elements.
+ 3. *Grid-Based Pixel Art.* The third modality consisted of fixed-size grid structures where participants created pixel art compositions. This format provided a discrete approach to geometric composition, contrasting with the continuous nature of the other two modalities.
+
+Across all three drawing types, participants worked with a curated and limited color palette. This constraint not only ensured consistency across the collected dataset but also aligned with the minimalist principles observed in the geometric abstract art that inspired the project.
+
+**Samples of curves based drawings**.
+ 
+![](img/Curve01.svg width="200px") ![](img/Curve02.svg width="200px") ![](img/Curve03.svg width="200px")
+ ![](img/Curve04.svg width="200px") ![](img/Curve06.svg width="200px") ![](img/Curve07.svg width="200px")
+ ![](img/Curve08.svg width="200px") ![](img/Curve09.svg width="200px") ![](img/Curve10.svg width="200px")
+
+**Samples of shapes based drawings**
+
+*To be completed*
+
+**Samples of pixel art drawings**
+
+*To be completed*
+
+# Aggregation
+The transformation of our collected drawings into collective visual expressions formed a crucial bridge between public participation and artistic creation of the music composers of the project. We explored various aggregation methods not as analytical tools, but as means to create new content that would capture the collective creative expression of all participants.
+
+**Curve-based drawings.** For the curve-based drawings, we developed two complementary approaches. The first method synthesized an 'average curve' by using the mathematical structure of the connected Bézier curves, creating a visual representation that embodied the drawing trajectories of thousands of participants. 
+
+![Average curve](img/MeanBW.svg width="600px")
+![Animated zoom on an inner portion of the average curve](img/AverageCurve.webm)
+
+Our second approach explored the space between curves by implementing the Fréchet distance as a measure, allowing us to visualize shortest paths between different drawings. Despite the computational complexity, we succeeded in approximating this metric space, revealing fascinating visual journeys through the space of all collected curves.
+
+![Animation of a shortest path in the space of curves](img/Geodesic.webm)
+
+**Shape-based drawings.** The shape-based compositions were aggregated through a process that computed average forms for each geometric shape. This process transformed the individual circles, triangles, and quadrilaterals into collective shapes that carried traces of all participant contributions, creating new geometric forms at the barycentre of all these contributions.
+
+![Average shapes](img/Mean_Shapes.svg width="600px")
+
+**Pixel art.** For the pixel art compositions, we chose to preserve the discrete nature of the drawing experience through dynamic visualization. By generating a time-lapse of heat maps of the public action on the pixels, we created a flowing visual narrative that revealed how thousands of participants collectively activated the pixel grid over time. This approach produced an evolving artwork that celebrated the cumulative creative process.
+
+![Animated heat map of the public action on pixels](img/HeatMute.webm)
+
+
+
+ 
+
+
+<!-- Markdeep: --><style class="fallback">body{visibility:hidden;white-space:pre;font-family:monospace}</style><script src="markdeep.min.js" charset="utf-8"></script><script src="https://morgan3d.github.io/markdeep/latest/markdeep.min.js" charset="utf-8"></script><script>window.alreadyProcessedMarkdeep||(document.body.style.visibility="visible")</script>
